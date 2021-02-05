@@ -1,4 +1,4 @@
-import { IFieldFactory, JavaFX, WebApp } from "./Facotory";
+import { IFieldFactory, JavaFX, NullObject, WebApp } from "./Facotory";
 
 class Client {
   private factory: IFieldFactory;
@@ -11,6 +11,9 @@ class Client {
     if (typeFactory === "Java") {
       factory = new JavaFX();
     } else if (typeFactory == "Web") factory = new WebApp();
+    else {
+      factory = new NullObject();
+    }
     return factory;
   }
   create() {

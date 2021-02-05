@@ -22,3 +22,12 @@ export class WebApp implements IFieldFactory {
     return new CheckBox();
   }
 }
+
+export class NullObject implements IFieldFactory {
+  createTextField(): TextField {
+    throw new Error("Method not implemented.");
+  }
+  createCheckBox(): CheckBox {
+    throw new Error("Method not implemented.");
+  }
+}
